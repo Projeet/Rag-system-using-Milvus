@@ -1,0 +1,13 @@
+botbuilder-integration-aiohttp
+langchain-nvidia-ai-endpoints
+python-dotenv
+pymilvus
+pandas 
+langchain
+sentence-transformers
+langchain-community
+BeautifulSoup4
+botbuilder-core
+asyncio
+aiohttp
+cookiecutter==1.7.0
