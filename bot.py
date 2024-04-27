@@ -14,15 +14,14 @@ class MyBot(ActivityHandler):
     async def on_message_activity(self, turn_context: TurnContext):
         human_msg=turn_context.activity.text
         context=search.fetch_query_result(human_msg)
-        new_query=f"""Read the below question asked:
-                      Question: {human_msg}
 
-                      Answer the above question asked using the below context:
-                      Context: {context}
-                      
-                      Answer: ...
+        new_query = f"""
+                    User: {human_msg}
 
-                      Note: If the question is unrelated to the context. Simply say "I dont' Know"
+                    Context: {context}
+
+                    please generate a response to the user's question based on the provided context. If the context is not relevant to the question, respond with "I do not have enough context to answer your question.
+
                     """
                     
         response=chat_model.get_bot_response(new_query)
